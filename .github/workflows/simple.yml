@@ -3,14 +3,15 @@ name: Shell Commands
 on:  
   pull_request:
   repository_dispatch:
+    types: "build"
 
 
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps: 
-      - name: echo a string
-        run: echo "Hello World"
+      - name: echo username
+        run: echo ${{ github.event.client_payload.user }}
         timeout-minutes: 0
       - name: multiline script 
         run: |
