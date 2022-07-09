@@ -23,6 +23,10 @@ jobs:
           print
           (platform.processor())
         shell: python
+      - name: git clone
+        uses: actions/checkout@v1
+      - name: run first shell script
+        run: ./first.sh
   run-windwos-commands:
     runs-on: windows-latest
     needs: ["run-shell-command"]
