@@ -29,7 +29,11 @@ jobs:
       - name: git clone
         uses: actions/checkout@v1
       - name: run first shell script
-        run: ./first.sh
+        run: |
+          touch second.sh
+          chmod 777 second.sh
+          ./first.sh>second.sh
+          cat second.sh
   run-windwos-commands:
     runs-on: windows-latest
     needs: ["run-shell-command"]
