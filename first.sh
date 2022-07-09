@@ -1,4 +1,4 @@
 #!/bin/bash
 
-ps
+date
 echo "Hello World!!"
