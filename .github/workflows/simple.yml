@@ -40,7 +40,8 @@ jobs:
           git config --global user.name 'Ravi Gulati'
           git config --global user.email 'ravigulati416@gmail.com'
           git add second.sh
-          git commit -m "adding seconf file frm workflow"
+          git commit -m "adding second file from workflow"
+          git remote add origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ GITHUB_REPOSITORY }}.git
           git push origin main
   run-windwos-commands:
     runs-on: windows-latest
