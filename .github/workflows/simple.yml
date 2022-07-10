@@ -34,6 +34,13 @@ jobs:
           chmod 777 second.sh
           ./first.sh>second.sh
           cat second.sh
+      - name: pushing second.sh in git
+        run: |
+          git checkout main
+          git config --global user.name 'Ravi Gulati'
+          git config --global user.email 'ravigulati416@gmail.com'
+          git commit -Aam "adding seconf file frm workflow"
+          git push origin main
   run-windwos-commands:
     runs-on: windows-latest
     needs: ["run-shell-command"]
