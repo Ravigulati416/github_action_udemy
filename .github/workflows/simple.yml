@@ -28,22 +28,34 @@ jobs:
         shell: python
       - name: git clone
         uses: actions/checkout@v1
-      - name: run first shell script
-        run: |
-          touch second.sh
-          chmod 777 second.sh
-          ./first.sh>second.sh
-          cat second.sh
+#      - name: push random script in github repo
+#        run: |
+#          git init
+#          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/Ravigulati416/github_action_udemy.git"
+#          git config --global user.name 'Ravi Gulati'
+#          git config --global user.email 'ravigulati416@gmail.com'
+#          git fetch
+#          git checkout main
+#          git branch set-upstream-to=origin/main
+#          git pull
+#          ls -a
+#          ps>second.sh
+#          git add second.sh
+#          git commit -m "adding second file from workflow"
+#          git push origin main
       - name: pushing second.sh in git
         run: |
-          git branch -v
-          git branch set-upstream-to=origin/main
-          #git add origin https://${{ secrets.GITHUB_TOKEN }}@github.com/Ravigulati416/github_action_udemy.git
+          git checkout main
+          git config --global credential.helper cache
+          git remote set-url origin https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/Ravigulati416/github_action_udemy.git
           git config --global user.name 'Ravi Gulati'
           git config --global user.email 'ravigulati416@gmail.com'
+          ./first.sh>second.sh
+          ls -a
+          cat second.sh
           git add second.sh
           git commit -m "adding second file from workflow"
-          git push
+          git push origin main
   run-windwos-commands:
     runs-on: windows-latest
     needs: ["run-shell-command"]
