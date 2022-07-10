@@ -36,15 +36,14 @@ jobs:
           cat second.sh
       - name: pushing second.sh in git
         run: |
-          git checkout main
-          git config credential.helper store
+          git branch -v
+          git branch set-upstream-to=origin/main
+          #git add origin https://${{ secrets.GITHUB_TOKEN }}@github.com/Ravigulati416/github_action_udemy.git
           git config --global user.name 'Ravi Gulati'
           git config --global user.email 'ravigulati416@gmail.com'
           git add second.sh
           git commit -m "adding second file from workflow"
-          #git remote -v
-          #git remote add origin https://${{ secrets.GITHUB_TOKEN }}@github.com/Ravigulati416/github_action_udemy.git
-          git push origin main
+          git push
   run-windwos-commands:
     runs-on: windows-latest
     needs: ["run-shell-command"]
