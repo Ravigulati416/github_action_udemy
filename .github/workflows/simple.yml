@@ -41,6 +41,7 @@ jobs:
           git config --global user.email 'ravigulati416@gmail.com'
           git add second.sh
           git commit -m "adding second file from workflow"
+          git remote -v
           git remote add origin https://${{ secrets.GITHUB_TOKEN }}@github.com/Ravigulati416/github_action_udemy.git
           git push origin main
   run-windwos-commands:
