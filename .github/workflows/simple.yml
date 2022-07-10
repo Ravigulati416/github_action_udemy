@@ -39,7 +39,8 @@ jobs:
           git checkout main
           git config --global user.name 'Ravi Gulati'
           git config --global user.email 'ravigulati416@gmail.com'
-          git commit -Aam "adding seconf file frm workflow"
+          git add second.sh
+          git commit -m "adding seconf file frm workflow"
           git push origin main
   run-windwos-commands:
     runs-on: windows-latest
