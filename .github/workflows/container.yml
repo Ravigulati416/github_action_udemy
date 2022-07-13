@@ -4,12 +4,12 @@ on:
   pull_request:
 jobs:
   docker-container:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     container:
       image: ubuntu:18.04
     steps:
-      name: print os release
-      run: echo /etc/os_release
+      - name: print os release
+        run: cat /etc/os-release
 
 
   
