@@ -18,6 +18,8 @@ jobs:
         with:
           entrypoint: "/usr/local/bin/node"
           args: -v
+      - name: print node version
+        run: node -v 
 
 
 
