@@ -5,11 +5,19 @@ on:
 jobs:
   docker-container:
     runs-on: ubuntu-20.04
+    container:
+      image: ubuntu:18.04
     steps:
       - name: print os release
         run: cat /etc/os-release
-    container:
-      image: ubuntu:18.04
+      - name: docker ps -a
+        run: docker ps -a
+      - name: use another docker container and check 
+        uses: docker://node:18-alpine
+      - name: docker ps -a after node container
+        run: docker ps -a
+
+      
       
 
 
