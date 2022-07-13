@@ -13,6 +13,7 @@ jobs:
       - name: print node version
         run: node -v 
       - name: use another docker container and check 
+        if: failure()
         uses: docker://node:18-alpine
         with:
           entrypoint: "/usr/local/bin/node"
