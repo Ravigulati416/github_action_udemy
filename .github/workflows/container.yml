@@ -11,9 +11,10 @@ jobs:
       - name: print os release
         run: cat /etc/os-release
       - name: print node version
+        continue-on-error: true
         run: node -v 
       - name: use another docker container and check 
-        if: failure()
+
         uses: docker://node:18-alpine
         with:
           entrypoint: "/usr/local/bin/node"
