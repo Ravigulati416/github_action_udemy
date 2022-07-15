@@ -1,5 +1,5 @@
 name: Docker
-on: 
+on:
   push:
   pull_request:
 jobs:
@@ -12,23 +12,11 @@ jobs:
         run: cat /etc/os-release
       - name: print node version
         continue-on-error: true
-        run: node -v 
-      - name: use another docker container and check 
-
+        run: node -v
+      - name: use another docker container and check
         uses: docker://node:18-alpine
         with:
           entrypoint: "/usr/local/bin/node"
           args: -v
-      - name: print node version
-        run: node -v 
-
-
-
-      
-      
-
-
-  
-
-
-      
+#      - name: print node version
+#        run: node -v

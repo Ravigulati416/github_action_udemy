@@ -1,26 +1,25 @@
-name: Shell Commands 
+name: Shell Commands
 
-on:  
+on:
   pull_request:
-#  push:
+    #  push:
     branches:
       - "main"
   repository_dispatch:
     types: "build"
 
-
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: echo username
         run: echo ${{ github.event.client_payload.user }}
         timeout-minutes: 0
-      - name: multiline script 
+      - name: multiline script
         run: |
-           node -v 
-           npm -v
-      - name: python Command 
+          node -v 
+          npm -v
+      - name: python Command
         run: |
           import platform 
           print
@@ -28,21 +27,21 @@ jobs:
         shell: python
       - name: git clone
         uses: actions/checkout@v1
-#      - name: push random script in github repo
-#        run: |
-#          git init
-#          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/Ravigulati416/github_action_udemy.git"
-#          git config --global user.name 'Ravi Gulati'
-#          git config --global user.email 'ravigulati416@gmail.com'
-#          git fetch
-#          git checkout main
-#          git branch set-upstream-to=origin/main
-#          git pull
-#          ls -a
-#          ps>second.sh
-#          git add second.sh
-#          git commit -m "adding second file from workflow"
-#          git push origin main
+      #      - name: push random script in github repo
+      #        run: |
+      #          git init
+      #          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/Ravigulati416/github_action_udemy.git"
+      #          git config --global user.name 'Ravi Gulati'
+      #          git config --global user.email 'ravigulati416@gmail.com'
+      #          git fetch
+      #          git checkout main
+      #          git branch set-upstream-to=origin/main
+      #          git pull
+      #          ls -a
+      #          ps>second.sh
+      #          git add second.sh
+      #          git commit -m "adding second file from workflow"
+      #          git push origin main
       - name: pushing second.sh in git
         run: |
           git checkout main
@@ -61,7 +60,7 @@ jobs:
     needs: ["run-shell-command"]
     steps:
       - name: Directory PowerShell
-        run: Get-Location 
-      - name: Directory Bash 
-        run: pwd 
-        shell: bash 
+        run: Get-Location
+      - name: Directory Bash
+        run: pwd
+        shell: bash

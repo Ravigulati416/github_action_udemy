@@ -1,1 +1,5 @@
 github-Token-for-ravigulati416.txt
+.prettierignore
+.prettierrc
+node_modules/
+package-lock.json
