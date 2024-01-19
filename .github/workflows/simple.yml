@@ -16,14 +16,13 @@ jobs:
         timeout-minutes: 0
       - name: multiline script
         run: |
-          ls
+          ls -l
           node -v 
           npm -v
       - name: python Command
         run: |
           import platform 
-          print
-          (platform.processor())
+          print(platform.processor())
         shell: python
       - name: git clone
         uses: actions/checkout@v1
