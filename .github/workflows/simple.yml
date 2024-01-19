@@ -5,8 +5,7 @@ on:
   push:
     branches:
       - "main"
-  repository_dispatch:
-    types: "build"
+  workflow_dispatch:
 
 jobs:
   run-shell-command:
