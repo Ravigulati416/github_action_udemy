@@ -1,4 +1,4 @@
-name: Docker
+name: Docker-first
 on:
   push:
   pull_request:
