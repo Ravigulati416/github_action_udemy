@@ -1,4 +1,4 @@
-name: git checkout and push
+name: First Action for cross platform testing
 
 on:
   pull_request:
