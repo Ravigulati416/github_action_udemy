@@ -6,6 +6,8 @@ on:
     branches:
       - "main"
   workflow_dispatch:
+  schedule:
+    - cron: "0 1 1 * *"
 
 jobs:
   run-shell-command:
