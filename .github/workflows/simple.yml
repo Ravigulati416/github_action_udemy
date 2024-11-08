@@ -47,7 +47,6 @@ jobs:
         run: |
           git checkout main
           git config --global credential.helper cache
-          $GITHUB_ACTOR
           ${{ secrets.PERSONAL_ACTION_TOKEN }}
           git remote set-url origin https://$GITHUB_ACTOR:${{ secrets.PERSONAL_ACTION_TOKEN }}@github.com/Ravigulati416/github_action_udemy.git
           git config --global user.name 'Ravi Gulati'
