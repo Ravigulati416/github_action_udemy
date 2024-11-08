@@ -31,7 +31,7 @@ jobs:
       #      - name: push random script in github repo
       #        run: |
       #          git init
-      #          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/Ravigulati416/github_action_udemy.git"
+      #          git remote add origin https://github.com/Ravigulati416/github_action_udemy.git"
       #          git config --global user.name 'Ravi Gulati'
       #          git config --global user.email 'ravigulati416@gmail.com'
       #          git fetch
@@ -47,7 +47,7 @@ jobs:
         run: |
           git checkout main
           git config --global credential.helper cache
-          git remote set-url origin https://$GITHUB_ACTOR:${{ secrets.PERSONAL_ACTION_TOKEN }}@github.com/Ravigulati416/github_action_udemy.git
+          git remote set-url origin https://github.com/Ravigulati416/github_action_udemy.git
           git config --global user.name 'Ravi Gulati'
           git config --global user.email 'ravigulati416@gmail.com'
           ./first.sh>second.sh
