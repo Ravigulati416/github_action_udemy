@@ -9,15 +9,16 @@ jobs:
     container:
       image: ubuntu:18.04
     steps:
+#     because of container tag, All steps will run in docker container now    
       - name: print os release
         run: cat /etc/os-release
       - name: print node version
         continue-on-error: true
         run: node -v
+#    Syntax for running steps in another docker conatiners
       - name: use another docker container and check
         uses: docker://node:18-alpine
         with:
           entrypoint: "/usr/local/bin/node"
           args: -v
-#      - name: print node version
-#        run: node -v
+
