@@ -21,7 +21,6 @@ jobs:
           ls -l
           node -v 
           npm -v 
-          echo "Hello World" >> $GITHUB_OUTPUT 
       - name: python Command
         run: |
           import platform 
