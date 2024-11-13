@@ -21,6 +21,7 @@ jobs:
           ls -l
           node -v 
           npm -v
+          echo $GITHUB_OUTPUT
       - name: python Command
         run: |
           import platform 
@@ -47,7 +48,8 @@ jobs:
         run: |
           git checkout main
           git config --global credential.helper cache
-          git remote set-url origin https://$GITHUB_ACTOR:${{ secrets.PERSONAL_ACTION_TOKEN }}@github.com/Ravigulati416/github_action_udemy.git
+          remove below comment and stuck in infinite loop, disable worklow to come out of that loop 
+          #git remote set-url origin https://$GITHUB_ACTOR:${{ secrets.PERSONAL_ACTION_TOKEN }}@github.com/Ravigulati416/github_action_udemy.git
           git config --global user.name 'Ravi Gulati'
           git config --global user.email 'ravigulati416@gmail.com'
           ./first.sh>second.sh
