@@ -20,8 +20,8 @@ jobs:
         run: |
           ls -l
           node -v 
-          npm -v >> GITHUB_OUTPUT 
-          echo $GITHUB_OUTPUT
+          npm -v 
+          echo "Hello World" >> $GITHUB_OUTPUT 
       - name: python Command
         run: |
           import platform 
