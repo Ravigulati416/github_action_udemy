@@ -19,6 +19,7 @@ jobs:
           ls -l
           node -v 
           npm -v 
+          echo "Current Branch: ${{ github.ref }}"
       - name: python Command
         run: |
           import platform 
