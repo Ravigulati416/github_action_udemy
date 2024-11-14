@@ -3,6 +3,7 @@ name: First Action for cross platform testing
 on:
   pull_request:
   push:
+    branches: "*"
   workflow_dispatch:
   schedule:
     - cron: "0 1 1 * *"
