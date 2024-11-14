@@ -28,6 +28,8 @@ jobs:
         shell: python
       - name: git clone
         uses: actions/checkout@v2
+        #Right now checkoutand git push is running using built-in github token, uncomment below PAT to run workflow on git push.
+        #caution: UNcommenting below with tag will make it enter into infinite loop for running workflow.  
         #with:
         #  token: ${{ secrets.PERSONAL_ACTION_TOKEN }}
       - run: |
