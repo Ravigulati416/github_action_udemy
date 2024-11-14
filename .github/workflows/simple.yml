@@ -3,6 +3,7 @@ name: First Action for cross platform testing
 on:
   pull_request:
   push:
+    #Push to second_feature branch mentioned below will not work if this branch does not have copy of this workflow
     branches: [ "main", "second_feature" ]
   workflow_dispatch:
   schedule:
@@ -26,7 +27,7 @@ jobs:
           print(platform.processor())
         shell: python
       - name: git clone
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
           token: ${{ secrets.PERSONAL_ACTION_TOKEN }}
       - run: |
