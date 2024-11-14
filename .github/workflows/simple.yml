@@ -31,9 +31,13 @@ jobs:
         with:
           token: ${{ secrets.PERSONAL_ACTION_TOKEN }}
       - run: |
+          git config --global user.name 'Ravi Gulati'
+          git config --global user.email 'ravigulati416@gmail.com'
           ./first.sh>second.sh
           ls -a
           cat second.sh
+          git add second.sh
+          git commit -m "adding second file from workflow"
           git push
       #      - name: push random script in github repo
       #        run: |
