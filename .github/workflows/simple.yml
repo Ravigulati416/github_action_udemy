@@ -28,8 +28,8 @@ jobs:
         shell: python
       - name: git clone
         uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.PERSONAL_ACTION_TOKEN }}
+        #with:
+        #  token: ${{ secrets.PERSONAL_ACTION_TOKEN }}
       - run: |
           git config --global user.name 'Ravi Gulati'
           git config --global user.email 'ravigulati416@gmail.com'
@@ -41,19 +41,18 @@ jobs:
           git push
       #      - name: push random script in github repo
       #        run: |
-      #          git init
-      #          git remote add origin https://github.com/Ravigulati416/github_action_udemy.git"
-      #          git config --global user.name 'Ravi Gulati'
-      #          git config --global user.email 'ravigulati416@gmail.com'
-      #          git fetch
-      #          git checkout main
-      #          git branch set-upstream-to=origin/main
-      #          git pull
-      #          ls -a
-      #          ps>second.sh
-      #          git add second.sh
-      #          git commit -m "adding second file from workflow"
-      #          git push origin main
+                  #git checkout main
+                  #git config --global credential.helper cache
+                  #remove below comment and stuck in infinite loop, disable worklow to come out of that loop 
+                  ##git remote set-url origin https://$GITHUB_ACTOR:${{ secrets.PERSONAL_ACTION_TOKEN }}@github.com/Ravigulati416/github_action_udemy.git
+                  #git config --global user.name 'Ravi Gulati'
+                  #git config --global user.email 'ravigulati416@gmail.com'
+                  #./first.sh>second.sh
+                  #ls -a
+                  #cat second.sh
+                  #git add second.sh
+                  #git commit -m "adding second file from workflow"
+                  #git push
 
   run-windwos-commands:
     runs-on: windows-latest
