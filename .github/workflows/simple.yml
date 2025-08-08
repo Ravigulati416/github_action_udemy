@@ -7,7 +7,7 @@ on:
     branches: [ "main", "second_feature" ]
   workflow_dispatch:
   schedule:
-    - cron: "0 1 1 * *"
+    - cron: "0 1 1/3 * *"
 
 jobs:
   run-shell-command:
